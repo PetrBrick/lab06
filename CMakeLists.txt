@@ -18,3 +18,5 @@ target_compile_options(check PRIVATE --coverage)
 target_link_libraries(check banking gtest_main gmock_main --coverage)
 add_test(NAME check COMMAND check)
 endif()
+
+include(CPackConfig.cmake)
