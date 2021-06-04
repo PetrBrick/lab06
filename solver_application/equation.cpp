@@ -5,14 +5,19 @@
 
 int main()
 {
-    float a = 0;
-    float b = 0;
-    float c = 0;
+    float a (0.0);
+    float b (0.0);
+    float c (0.0);
 
-    std::cin >> a >> b >> c;
-
-    float x1 = 0;
-    float x2 = 0;
+    std::cout<<"a = ";
+    std::cin >>a; 
+    std::cout<<"b = ";
+    std::cin >>b; 
+    std::cout<<"c = ";
+    std::cin >>c; 
+    
+    float x1 = 1;
+    float x2 = 1;
 
     try
     {

@@ -1,4 +1,3 @@
-
 os:
     - linux
     - osx
@@ -43,7 +42,7 @@ script:
 - cd _build
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then cpack -G DragNDrop  ;fi
 - if [ "$TRAVIS_OS_NAME" = "linux" ]; then cpack -G DEB  ;fi
-
+#- if [ "$TRAVIS_OS_NAME" = "linux" ]; then cpack -G RPM  ;fi
 deploy:
     provider: releases
 
@@ -54,12 +53,10 @@ deploy:
       - solver_application/_build/solver-source-files.zip
       - solver_application/_build/solver-source-files.tar.gz
       - if [ "$TRAVIS_OS_NAME" = "osx" ]; then 'solver_application/_build/solver.dmg'  ;fi
-    
+ #     - if [ "$TRAVIS_OS_NAME" = "linux" ]; then 'solver_application/_build/solver.rpm'  ;fi
       - if [ "$TRAVIS_OS_NAME" = "linux" ]; then 'solver_application/_build/solver.deb'  ;fi
     
     skip_cleanup: true
     
     on:
         tags: true
-
-   
